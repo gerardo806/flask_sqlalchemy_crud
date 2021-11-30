@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    actualizar
+{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center text-white mb-3">Actualizar Contacto</h1>
+
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <form action="/actualizar/{{contact.id}}" method="post" class="card bg-dark text-white">
+            <div class="card-body p-4">
+                <div class="mb-3">
+                    <label for="fullname">Actualizar nombre completo: </label>
+                    <input type="text" placeholder="Escribir nombre completo" name="fullname" value="{{contact.fullname}}" class="form-control rounded-0 bg-dark border-0 text-white">
+                </div>
+                <div class="mb-3">
+                    <label for="email">Actualizar email: </label>
+                    <input type="email" placeholder="Escribe tu correo electronico" name="email" value="{{contact.email}}" class="form-control rounded-0 bg-dark border-0 text-white">
+                </div>
+                <div class="mb-3">
+                    <label for="phone">Actualizar teléfono: </label>
+                    <input type="number" placeholder="Escribe tu numero de Teléfono" name="phone" value="{{contact.phone}}" class="form-control rounded-0 bg-dark border-0 text-white">
+                </div>
+                <input type="submit" value="Enviar" class="btn btn-secondary">
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
